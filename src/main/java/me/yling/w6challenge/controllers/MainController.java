@@ -51,7 +51,7 @@ public class MainController {
     }
 
     @RequestMapping("/addedu/{id}")
-    public String addEducation (@PathVariable("id") long id, Model model)
+    public String addEdutoPer (@PathVariable("id") long id, Model model)
     {
         Person findper = personRepo.findOne(id);
         model.addAttribute("findper", findper);
@@ -59,6 +59,7 @@ public class MainController {
         Education oneedu = new Education();
         oneedu.setPerson(findper);
         model.addAttribute("newEdu", oneedu);
+        model.addAttribute("addedumessage", "Add your education here");
 
         return "addedutoper";
     }

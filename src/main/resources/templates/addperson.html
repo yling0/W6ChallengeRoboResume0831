@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+<h1 th:text="${addpersonmessage}">This should not display</h1>
+
+<form action="#" th:action="@{/addperson}" th:object="${newPerson}" method="post">
+    <input type="hidden" th:field="*{id}" />
+
+    <span th:if="${#fields.hasErrors('fName')}" th:error="*{fName}">Name Error</span>
+    <p>First Name: <input type="text" th:field="*{fName}"/></p>
+
+    <span th:if="${#fields.hasErrors('lName')}" th:error="*{lName}">Name Error</span>
+    <p>Last Name: <input type="text" th:field="*{lName}"/></p>
+
+    <span th:if="${#fields.hasErrors('email')}" th:error="*{email}">Email Error</span>
+    <p>Email: <input type="text" th:field="*{email}"/></p>
+
+    <button type="submit" class="btn btn-dark" value="Submit">Submit</button>
+</form>
+<a href="showd.html">Show all directors</a>
+<a href="showm.html">Show all movies</a>
+
+</body>
+
+</html>

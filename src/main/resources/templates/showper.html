@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<!--list persons-->
+<h1>All persons</h1>
+<table>
+    <tr>
+        <td><p>Name</p></td>
+        <td><p>Email</p></td>
+    </tr>
+
+    <th:block th:each="singleperson:${persons}">
+        <tr>
+            <td><p th:text="${singleperson.fName}+' '+${singleperson.lName}"/></td>
+            <td><p th:text="${singleperson.email}"/></td>
+            <td><a th:href="@{/addedu/{id}(id=${singleperson.id})}">Add education for this person</a></td>
+            <td><a th:href="@{/listedu/{id}(id=${singleperson.id})}">Show education for this person</a></td>
+        </tr>
+    </th:block>
+
+</table>
+
+<a href="listedu">Show all educations</a>
+
+
+</body>
+</html>

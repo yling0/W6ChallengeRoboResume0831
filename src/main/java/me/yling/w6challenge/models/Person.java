@@ -105,4 +105,9 @@ public class Person {
         ski.setPerson(this);
         this.skillSet.add(ski);
     }
+
+    public void delEdu (Education education)
+    {
+        this.getEducationSet().remove(education);
+    }
 }

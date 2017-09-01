@@ -10,7 +10,8 @@
 
 <form action="#" th:action="@{/addedutoper}" th:object="${newEdu}" method="post">
     <input type="text" th:field="*{person.id}" />
-    <input type="text" th:field="*{person.name}"/>
+    <input type="text" th:field="*{person.fName}"/>
+    <input type="text" th:field="*{eduId}" />
 
     <!--<span th:if="${#fields.hasErrors('degree')}" th:error="*{degree}">Degree Error</span>-->
     <p>Enter your degree: <input type="text" th:field="*{degree}"/></p>

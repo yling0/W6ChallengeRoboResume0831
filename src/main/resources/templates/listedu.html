@@ -1,10 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
     <title>Title</title>
 </head>
 <body>
+<!--list person's edu-->
+<h1>Person's Education</h1>
+
+<h1>Your Resume</h1>
+<th:block th:each="singleperson:${persons}">
+    <tr>
+        <p></p>
+        <p th:text="${singleperson.fName} +' '+ ${singleperson.lName}"/>
+        <p th:text="${singleperson.email}"/>
+        <td><a th:href="@{/updateperson/{id}(id=${singleperson.id})}">Update</a></td>
+        <td><a th:href="@{/deleteperson/{id}(id=${singleperson.id})}">Delete</a></td>
+    </tr>
+    <th:block th:each="singleedu:${singleperson.educationSet}">
+        <tr>
+            <p></p>
+            <p th:text="${singleedu.degree}+' in '+${singleedu.major}"/>
+            <p th:text="${singleedu.uni}+', '+${singleedu.graduateDate}"/>
+            <td>
+                <a th:href="@{/updateedu/{id}(id=${singleedu.eduId})}">Update</a> -
+                <a th:href="@{/deleteedu/{id}(id=${singleedu.eduId})}">Delete</a>
+            </td>
+            <br />
+        </tr>
+    </th:block>
+</th:block>
+
+
 
 </body>
 </html>
+

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+<h2>Your education added successfully</h2>
+<br/>
+<p th:text="'Education: ' + ${newEdu.degree} + ' in ' + ${newEdu.major}"/>
+<p th:text="${newEdu.uni}"/>
+<p th:text="${newEdu.graduateDate}"/>
+
+<a th:href="@{/addedu/{id}(id=${newEdu.person.id})}"><button class="btn btn-dark">Add another</button></a>
+<a href="/"><button class="btn btn-dark">Back Home</button></a>
+
+
+</body>
+</html>

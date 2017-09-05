@@ -37,12 +37,12 @@ public class MainController {
     {
         return "welcome";
     }
-
-    @RequestMapping("/login")
-    public String login()
-    {
-        return "login";
-    }
+//
+//    @RequestMapping("/login")
+//    public String login()
+//    {
+//        return "login";
+//    }
 
 
     @GetMapping("/addperson")

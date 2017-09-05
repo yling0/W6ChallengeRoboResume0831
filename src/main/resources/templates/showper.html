@@ -17,15 +17,14 @@
         <tr>
             <td><p th:text="${singleperson.fName}+' '+${singleperson.lName}"/></td>
             <td><p th:text="${singleperson.email}"/></td>
-            <td><a th:href="@{/addedu/{id}(id=${singleperson.id})}">Add education for this person</a></td>
-            <td><a th:href="@{/listedu/{id}(id=${singleperson.id})}">Show education for this person</a></td>
+            <td><a th:href="@{/addedu/{id}(id=${singleperson.id})}">Add educations</a></td>
+            <td><a th:href="@{/addexp/{id}(id=${singleperson.id})}">Add working experiences</a></td>
+            <td><a th:href="@{/addski/{id}(id=${singleperson.id})}">Add skills</a></td>
+            <td><a th:href="@{/listresume/{id}(id=${singleperson.id})}">Show resume</a></td>
         </tr>
     </th:block>
 
 </table>
-
-<a href="listedu">Show all educations</a>
-
 
 </body>
 </html>

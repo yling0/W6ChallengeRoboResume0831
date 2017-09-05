@@ -11,10 +11,10 @@
 <form action="#" th:action="@{/addperson}" th:object="${newPerson}" method="post">
     <input type="hidden" th:field="*{id}" />
 
-    <span th:if="${#fields.hasErrors('fName')}" th:error="*{fName}">Name Error</span>
+    <span th:if="${#fields.hasErrors('fName')}" th:error="*{fName}">First Name Error</span>
     <p>First Name: <input type="text" th:field="*{fName}"/></p>
 
-    <span th:if="${#fields.hasErrors('lName')}" th:error="*{lName}">Name Error</span>
+    <span th:if="${#fields.hasErrors('lName')}" th:error="*{lName}">Last Name Error</span>
     <p>Last Name: <input type="text" th:field="*{lName}"/></p>
 
     <span th:if="${#fields.hasErrors('email')}" th:error="*{email}">Email Error</span>
@@ -22,8 +22,8 @@
 
     <button type="submit" class="btn btn-dark" value="Submit">Submit</button>
 </form>
-<a href="showd.html">Show all directors</a>
-<a href="showm.html">Show all movies</a>
+<a href="showper">Show all persons</a>
+
 
 </body>
 

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+<h2 th:text="${addexpmessage}">This should not display</h2>
+
+<form action="#" th:action="@{/addexptoper}" th:object="${newExp}" method="post">
+    <input type="text" th:field="*{person.id}" />
+    <input type="text" th:field="*{person.fName}"/>
+    <input type="text" th:field="*{expId}" />
+    <br/>
+
+
+    <p><span th:if="${#fields.hasErrors('title')}" th:error="*{title}">Title Error</span></p>
+    <p>Enter your title: <input type="text" th:field="*{title}"/></p>
+    <span th:if="${#fields.hasErrors('company')}" th:error="*{company}">Company Error</span>
+    <p>Enter your company: <input type="text" th:field="*{company}"/></p>
+    <span th:if="${#fields.hasErrors('startDate')}" th:error="*{startDate}">Start Date Error</span>
+    <p>Enter your start date: <input type="text" th:field="*{startDate}"/></p>
+    <span th:if="${#fields.hasErrors('endDate')}" th:error="*{endDate}">End Date Error</span>
+    <p>Enter your end date: <input type="text" th:field="*{endDate}"/></p>
+    <span th:if="${#fields.hasErrors('duty1')}" th:error="*{duty1}">Input Error</span>
+    <p>Enter your duties: <input type="text" th:field="*{duty1}"/></p>
+    <span th:if="${#fields.hasErrors('duty2')}" th:error="*{duty2}">Input Error</span>
+    <p>Enter your duties: <input type="text" th:field="*{duty2}"/></p>
+
+    <button type="submit" class="btn btn-dark" value="Submit">Add Experience</button>
+    <button type="reset" class="btn btn-dark" value="Reset">Reset</button>
+</form>
+
+</body>
+
+</html>

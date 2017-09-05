@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<!--list person's edu-->
+<h1>Person's Education</h1>
+
+<h1>Your Resume</h1>
+<th:block th:each="singleperson:${persons}">
+    <tr>
+        <p></p>
+        <p th:text="${singleperson.fName} +' '+ ${singleperson.lName}"/>
+        <p th:text="${singleperson.email}"/>
+        <td><a th:href="@{/updateperson/{id}(id=${singleperson.id})}">Update</a></td>
+        <td><a th:href="@{/deleteperson/{id}(id=${singleperson.id})}">Delete</a></td>
+    </tr>
+
+    <!--Education info-->
+    <th:block th:each="singleedu:${singleperson.educationSet}">
+        <tr>
+            <p></p>
+            <p th:text="${singleedu.degree}+' in '+${singleedu.major}"/>
+            <p th:text="${singleedu.uni}+', '+${singleedu.graduateDate}"/>
+            <td>
+                <a th:href="@{/updateedu/{id}(id=${singleedu.eduId})}">Update</a> -
+                <a th:href="@{/deleteedu/{id}(id=${singleedu.eduId})}">Delete</a>
+            </td>
+            <br />
+        </tr>
+    </th:block>
+
+    <!--Experience info-->
+    <h3>Experience</h3>
+    <th:block th:each="singleexp:${singleperson.experienceSet}">
+    <tr>
+    <p></p>
+    <p th:text="${singleexp.title}"/>
+    <p th:text="${singleexp.company}+', '+${singleexp.startDate}+' - '+${singleexp.endDate}"/>
+    <p th:text="'-Duty1: ' + ${singleexp.duty1}"/>
+    <p th:text="'-Duty2: ' + ${singleexp.duty2}"></p>
+    <a th:href="@{/updateexp/{id}(id=${singleexp.expId})}">Update</a> -
+    <a th:href="@{/deleteexp/{id}(id=${singleexp.expId})}">Delete</a>
+    </tr>
+    </th:block>
+
+    <!--Skill info-->
+    <h3>Skill</h3>
+    <th:block th:each="singleski:${singleperson.skillSet}">
+        <tr>
+            <p></p>
+            <p th:text="${singleski.skiName} + ', '+ ${singleski.skiLevel}"/>
+            <a th:href="@{/updateski/{id}(id=${singleski.skiId})}">Update</a> -
+            <a th:href="@{/deleteski/{id}(id=${singleski.skiId})}">Delete</a>
+        </tr>
+    </th:block>
+
+</th:block>
+
+
+
+</body>
+</html>
+

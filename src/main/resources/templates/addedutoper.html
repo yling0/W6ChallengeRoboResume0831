@@ -10,15 +10,17 @@
 
 <form action="#" th:action="@{/addedutoper}" th:object="${newEdu}" method="post">
     <input type="text" th:field="*{person.id}" />
-    <input type="text" th:field="*{person.name}"/>
+    <input type="text" th:field="*{person.fName}"/>
+    <input type="text" th:field="*{eduId}" />
+    <br/>
 
-    <!--<span th:if="${#fields.hasErrors('degree')}" th:error="*{degree}">Degree Error</span>-->
+    <p><span th:if="${#fields.hasErrors('degree')}" th:error="*{degree}">Degree Error</span></p>
     <p>Enter your degree: <input type="text" th:field="*{degree}"/></p>
-    <!--<span th:if="${#fields.hasErrors('major')}" th:error="*{major}">Major Error</span>-->
+    <span th:if="${#fields.hasErrors('major')}" th:error="*{major}">Major Error</span>
     <p>Enter your major: <input type="text" th:field="*{major}"/></p>
-    <!--<span th:if="${#fields.hasErrors('uni')}" th:error="*{uni}">University Error</span>-->
+    <span th:if="${#fields.hasErrors('uni')}" th:error="*{uni}">University Error</span>
     <p>Enter your university: <input type="text" th:field="*{uni}"/></p>
-    <!--<span th:if="${#fields.hasErrors('graduateDate')}" th:error="*{graduateDate}">Graduate Date Error</span>-->
+    <span th:if="${#fields.hasErrors('graduateDate')}" th:error="*{graduateDate}">Graduate Date Error</span>
     <p>Enter your graduate date: <input type="text" th:field="*{graduateDate}"/></p>
 
     <button type="submit" class="btn btn-dark" value="Submit">Add Education</button>

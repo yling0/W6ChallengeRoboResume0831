@@ -105,4 +105,14 @@ public class Person {
         ski.setPerson(this);
         this.skillSet.add(ski);
     }
+
+    public void delEdu (Education education)
+    {
+        this.getEducationSet().remove(education);
+    }
+    public void delExp (Experience experience)
+    {
+        this.getExperienceSet().remove(experience);
+    }
+    public void delSki (Skill skill) { this.getSkillSet().remove(skill); }
 }

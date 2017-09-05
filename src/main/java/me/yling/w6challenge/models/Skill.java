@@ -10,7 +10,7 @@ public class Skill {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long skiID;
+    private long skiId;
 
     @NotEmpty
     @Size(min = 2)
@@ -23,13 +23,12 @@ public class Skill {
     @JoinColumn(name="person_id")
     private Person person;
 
-
-    public long getSkiID() {
-        return skiID;
+    public long getSkiId() {
+        return skiId;
     }
 
-    public void setSkiID(long skiID) {
-        this.skiID = skiID;
+    public void setSkiId(long skiId) {
+        this.skiId = skiId;
     }
 
     public String getSkiName() {

@@ -37,12 +37,12 @@ public class MainController {
     {
         return "welcome";
     }
-//
-//    @RequestMapping("/login")
-//    public String login()
-//    {
-//        return "login";
-//    }
+
+    @RequestMapping("/login")
+    public String login()
+    {
+        return "login";
+    }
 
 
     @GetMapping("/addperson")
@@ -108,7 +108,7 @@ public class MainController {
 
         Education oneedu = new Education();
         oneedu.setPerson(personRepo.findOne(id));
-        model.addAttribute("addedumessage", "Add your education here");
+        model.addAttribute("addedumessage", "Add education here");
         model.addAttribute("newEdu", oneedu);
 
         System.out.println("id:"+id);
@@ -164,7 +164,7 @@ public class MainController {
         educationRepo.delete(id);
 //        model.addAttribute(personRepo.findOne(perId));
 
-        return "redirect:/";
+        return "redirect:/showper";
     }
 
     //add experience to specific person according person's id
@@ -217,7 +217,7 @@ public class MainController {
         experienceRepo.delete(id);
 //        model.addAttribute(personRepo.findOne(perId));
 
-        return "redirect:/";
+        return "redirect:/showper";
     }
 
     //add skills to specific person according person's id
@@ -269,7 +269,7 @@ public class MainController {
         experienceRepo.delete(id);
 //        model.addAttribute(personRepo.findOne(perId));
 
-        return "redirect:/";
+        return "redirect:/showper";
     }
 
 
